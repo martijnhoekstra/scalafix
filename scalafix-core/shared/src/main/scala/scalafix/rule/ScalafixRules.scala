@@ -17,6 +17,7 @@ object ScalafixRules {
     LeakingImplicitClassVal
   )
   def semantic(index: SemanticdbIndex): List[Rule] = List(
+    NamedLiterals(index),
     NoInfer(index, NoInferConfig.default),
     ExplicitResultTypes(index),
     RemoveUnusedImports(index),
